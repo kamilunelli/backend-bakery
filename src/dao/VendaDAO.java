@@ -36,7 +36,7 @@ public class VendaDAO implements ICrud<Venda> {
             
             pstmVenda.setInt(1, venda.getCliente().getId());
             pstmVenda.setTimestamp(2, java.sql.Timestamp.valueOf(venda.getDataHora()));
-            pstmVenda.setBigDecimal(3, venda.getValorTotal()); 
+            pstmVenda.setBigDecimal(3, venda.getValorTotal());
             
             pstmVenda.execute();
             
@@ -47,10 +47,10 @@ public class VendaDAO implements ICrud<Venda> {
                 venda.setId(vendaId); 
             }
             rs.close(); 
-          
+            
             itemVendaDAO.salvarItens(venda.getItens(), vendaId, conn); 
 
-            conn.commit(); 
+            conn.commit();
             
             System.out.println("Venda ID " + vendaId + " e seus itens salvos (ICrud CREATE OK).");
 
@@ -67,7 +67,7 @@ public class VendaDAO implements ICrud<Venda> {
 
         } finally {
             try {
-                if (conn != null) conn.setAutoCommit(true);
+                if (conn != null) conn.setAutoCommit(true); 
                 if (pstmVenda != null) pstmVenda.close();
             } catch (SQLException e) {
                 System.err.println("Erro ao fechar recursos (VendaDAO): " + e.getMessage());
@@ -75,10 +75,11 @@ public class VendaDAO implements ICrud<Venda> {
             conexaoDAO.fecharConexao(conn);
         }
     }
-
-    //read
+    
+    // read
     @Override
     public List<Venda> consultarTodos() {
+        String sql = "SELECT v.id, v.data_hora, v.valor_total, c.id AS cliente_id, c.nome AS cliente_nome FROM VENDA v JOIN CLIENTE c ON v.cliente_id = c.id ORDER BY v.data_hora DESC";
         return null; 
     }
 
@@ -97,6 +98,6 @@ public class VendaDAO implements ICrud<Venda> {
     //delete
     @Override
     public void excluir(int id) {
-        System.out.println("AVISO ICRUD: Para excluir Venda, primeiro exclua os itens. DELETE não implementado na prática.");
+        System.out.println("AVISO ICRUD: Exclusão de Venda requer estorno. DELETE não implementado na prática.");
     }
 }
