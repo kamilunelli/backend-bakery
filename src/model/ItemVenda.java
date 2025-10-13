@@ -19,7 +19,7 @@ public class ItemVenda {
         this.precoUnitario = precoUnitario;
     }
     
-    public ItemVenda(int id, Venda venda, Produto produto, int quantidad, BigDecimal precoUnitario){
+    public ItemVenda(int id, Venda venda, Produto produto, int quantidade, BigDecimal precoUnitario){
         this.id = id;
         this.venda = venda;
         this.produto = produto;
