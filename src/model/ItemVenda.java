@@ -3,30 +3,30 @@ package model;
 import java.math.BigDecimal;
 
 public class ItemVenda {
-    
+
     private int id;
     private Venda venda;
-    private Produto produto;  // produto que foi vendido 
+    private Produto produto;   
     private int quantidade;
-    private BigDecimal precoUnitario; // preco que foi registrado no momento da venda
-    
-    public ItemVenda(){ 
+    private BigDecimal precoUnitario;
+
+    public ItemVenda() {
     }
-    
-    public ItemVenda(Produto produto, int quantidade, BigDecimal precoUnitario){
+
+    public ItemVenda(Produto produto, int quantidade, BigDecimal precoUnitario) {
         this.produto = produto;
         this.quantidade = quantidade;
         this.precoUnitario = precoUnitario;
     }
-    
-    public ItemVenda(int id, Venda venda, Produto produto, int quantidade, BigDecimal precoUnitario){
+
+    public ItemVenda(int id, Venda venda, Produto produto, int quantidade, BigDecimal precoUnitario) {
         this.id = id;
         this.venda = venda;
         this.produto = produto;
         this.quantidade = quantidade;
-        this.precoUnitario = precoUnitario;       
+        this.precoUnitario = precoUnitario;
     }
-    
+
     public int getId() {
         return id;
     }
@@ -66,4 +66,9 @@ public class ItemVenda {
     public void setPrecoUnitario(BigDecimal precoUnitario) {
         this.precoUnitario = precoUnitario;
     }
+
+    public BigDecimal getSubTotal() {
+        return this.precoUnitario.multiply(BigDecimal.valueOf(this.quantidade));
+    }
+
 }
