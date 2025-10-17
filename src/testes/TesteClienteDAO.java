@@ -5,7 +5,7 @@ import dao.ClienteDAO;
 import java.util.List; 
 
 
-public class TesteClienteDAO {
+/*public class TesteClienteDAO {
     
     public static void testarConsulta(ClienteDAO dao) {
     System.out.println("\n--- Testando Consulta de Todos os Clientes ---");
@@ -104,7 +104,8 @@ public class TesteClienteDAO {
         
         
         
-    }
+    }*/
+
     
     
 
