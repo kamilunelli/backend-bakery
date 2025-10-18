@@ -26,7 +26,7 @@ public class Produto {
         this.nome = nome;
         this.preco = preco;
         this.tipo = tipo;
-        this.quantidadeEmEstoque = 0;
+        this.quantidadeEmEstoque = quantidadeEmEstoque;
         this.ehResgatavel = ehResgatavel;
         this.custoEmPontos = custoEmPontos;
     }
@@ -57,3 +57,4 @@ public class Produto {
     public void setCustoEmPontos(int custoEmPontos) { this.custoEmPontos = custoEmPontos; }
     
 }
+    

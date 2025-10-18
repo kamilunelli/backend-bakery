@@ -36,6 +36,9 @@ public class JanelaPrincipalView extends javax.swing.JFrame {
         mnComercio = new javax.swing.JMenu();
         miVendas = new javax.swing.JMenuItem();
         miPontos = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         jMenuItem3.setText("jMenuItem3");
 
@@ -81,6 +84,21 @@ public class JanelaPrincipalView extends javax.swing.JFrame {
 
         jMenuBar1.add(mnComercio);
 
+        jMenu1.setText("Relatório");
+
+        jMenuItem1.setText("Cliente");
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("Produto");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu1);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -98,13 +116,13 @@ public class JanelaPrincipalView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void miClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miClienteActionPerformed
-        ClienteListView cliente = new ClienteListView();
+        ClienteCadastroView cliente = new ClienteCadastroView();
         cliente.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_miClienteActionPerformed
 
     private void miProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miProdutoActionPerformed
-        ProdutoListView produto = new ProdutoListView();
+        ProdutoCadastroView produto = new ProdutoCadastroView();
         produto.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_miProdutoActionPerformed
@@ -120,6 +138,10 @@ public class JanelaPrincipalView extends javax.swing.JFrame {
         pontos.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_miPontosActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,7 +169,10 @@ public class JanelaPrincipalView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem miCliente;
     private javax.swing.JMenuItem miPontos;
