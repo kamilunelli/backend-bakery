@@ -1,6 +1,6 @@
 package view;
-import controller.ClienteController;
 
+import controller.ClienteController;
 
 public class ClienteCadastroView extends javax.swing.JFrame {
 
@@ -113,13 +113,29 @@ public class ClienteCadastroView extends javax.swing.JFrame {
         String nome = tfnome.getText();
         String cpf = tfcpf.getText();
         String numero = tfnumero.getText();
-        
-        controller.salvarCliente(nome, cpf, numero);
-        
-        JanelaPrincipalView view = new JanelaPrincipalView();
-        view.setVisible(true);
-        this.setVisible(false);
 
+        try {
+            // 1. CHAMA O CONTROLLER (Ele executa a lógica e salva no BD)
+            controller.salvarCliente(nome, cpf, numero);
+
+            // 2. FEEDBACK DE SUCESSO
+            javax.swing.JOptionPane.showMessageDialog(this,
+                    "Cliente Salvo com Sucesso.",
+                    "Sucesso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+            // 3. NAVEGAÇÃO
+            JanelaPrincipalView view = new JanelaPrincipalView();
+            view.setVisible(true);
+            this.setVisible(false);
+
+        } catch (Exception e) {
+            // TRATAMENTO DE ERROS DE SISTEMA (Controller/DAO)
+            // Isso captura erros como: CPF inválido (se validado no Controller), 
+            // ou falha na conexão com o banco de dados.
+            javax.swing.JOptionPane.showMessageDialog(this,
+                    "Falha ao salvar Cliente: " + e.getMessage(),
+                    "Erro de Sistema", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btsalvarActionPerformed
 
     public static void main(String args[]) {

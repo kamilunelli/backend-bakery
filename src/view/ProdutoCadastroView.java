@@ -3,15 +3,15 @@ package view;
 import java.math.BigDecimal;
 import controller.ProdutoController;
 
-
 /**
  *
  * @author SAMSUNG
  */
 public class ProdutoCadastroView extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ProdutoCadastroView.class.getName());
     private final ProdutoController controller;
+
     /**
      * Creates new form ProdutoListView
      */
@@ -175,19 +175,43 @@ public class ProdutoCadastroView extends javax.swing.JFrame {
         int quant;
         boolean reg;
         int custo;
-        
-        nome = tfnome.getText();
-        tipo = tftipo.getText();
-        preco = new java.math.BigDecimal(tfpreco.getText());
-        quant = Integer.parseInt(tfquant.getText());
-        reg = Boolean.parseBoolean(tfresg.getText());
-        custo = Integer.parseInt(tfcusto.getText());
-        
-        controller.salvarProduto(nome, preco, tipo, quant, reg, custo);
-        
-        JanelaPrincipalView view = new JanelaPrincipalView();
-        view.setVisible(true);
-        this.setVisible(false);
+
+        try {
+            // COLETA E CONVERSÃO DOS DADOS
+            nome = tfnome.getText();
+            tipo = tftipo.getText();
+
+            // As conversões podem falhar se o usuário digitar algo inválido
+            preco = new java.math.BigDecimal(tfpreco.getText());
+            quant = Integer.parseInt(tfquant.getText());
+            reg = Boolean.parseBoolean(tfresg.getText()); // Retorna false se não for "true"
+            custo = Integer.parseInt(tfcusto.getText());
+
+            // 1. CHAMA O CONTROLLER (Ele executa a lógica e salva no BD)
+            controller.salvarProduto(nome, preco, tipo, quant, reg, custo);
+
+            // 2. FEEDBACK DE SUCESSO
+            javax.swing.JOptionPane.showMessageDialog(this,
+                    "Produto Salvo com Sucesso.",
+                    "Sucesso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+            // 3. NAVEGAÇÃO
+            JanelaPrincipalView view = new JanelaPrincipalView();
+            view.setVisible(true);
+            this.setVisible(false);
+
+        } catch (NumberFormatException e) {
+            // TRATAMENTO DE ERRO DE INPUT: Se o usuário digitar algo não numérico
+            javax.swing.JOptionPane.showMessageDialog(this,
+                    "Erro de conversão. Verifique se Preço, Quantidade e Custo em Pontos são números válidos.",
+                    "Erro de Input", javax.swing.JOptionPane.ERROR_MESSAGE);
+
+        } catch (Exception e) {
+            // TRATAMENTO DE ERROS DE VALIDAÇÃO (Ex: Controller exige Nome, ou Regra de Negócio falha)
+            javax.swing.JOptionPane.showMessageDialog(this,
+                    "Falha ao salvar produto: " + e.getMessage(),
+                    "Erro de Sistema", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btsalvarActionPerformed
 
     /**
