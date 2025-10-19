@@ -128,13 +128,13 @@ public class JanelaPrincipalView extends javax.swing.JFrame {
     }//GEN-LAST:event_miProdutoActionPerformed
 
     private void miVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miVendasActionPerformed
-        VendaFormView venda = new VendaFormView();
+        VendaView venda = new VendaView();
         venda.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_miVendasActionPerformed
 
     private void miPontosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miPontosActionPerformed
-        TrocaPontosFormView pontos = new TrocaPontosFormView();
+        TrocaPontosView pontos = new TrocaPontosView();
         pontos.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_miPontosActionPerformed

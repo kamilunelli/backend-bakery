@@ -55,11 +55,11 @@ public class Venda {
         this.dataHora = dataHora;
     }
 
-    public List<ItemVenda> getItens() {
+    public List<ItemVenda> getItens(){
         return itens;
     }
-
-    public void setItens(List<ItemVenda> itens) {
+    
+    public void setItens(List<ItemVenda> itens){
         this.itens = itens;
     }
 

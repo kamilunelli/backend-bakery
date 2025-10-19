@@ -10,7 +10,8 @@ public class ClienteController {
     public ClienteController() {
         this.clienteDAO = new ClienteDAO(); 
     }
-
+    
+    //método para cadastrar clientes
     public void salvarCliente(String nome, String cpf, String numero) {
         Cliente cliente = new Cliente(nome, cpf, numero);
         this.clienteDAO.salvar(cliente); 
