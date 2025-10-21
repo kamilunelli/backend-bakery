@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ConexaoDAO {
     
-    //atributos para conectar ao banco de dados (utilizando jdbc)
+    //atributos para conectar ao banco de dados (utilizando jdbc) final pois nao sao mutaveis
     private static final String URL = "jdbc:postgresql://localhost:5432/TrabalhoPadaria"; 
     
     private static final String USUARIO = "postgres"; 

@@ -17,7 +17,7 @@ public class Venda {
     public Venda (){
     }
     
-    //construtor sem id
+    //construtor para nova venda
     public Venda(Cliente cliente, List<ItemVenda> itens){
         this.cliente = cliente;
         this.itens = itens;

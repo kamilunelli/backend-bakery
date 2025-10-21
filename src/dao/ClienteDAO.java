@@ -9,7 +9,7 @@ import model.Cliente;
 
 public class ClienteDAO implements ICrud<Cliente> {
 
-    //atributo
+    //atributo final pois nao eh mutavel
     private final ConexaoDAO conexaoDAO; 
 
     //crud de cliente

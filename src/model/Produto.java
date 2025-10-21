@@ -24,7 +24,7 @@ public class Produto {
         this.custoEmPontos = custoEmPontos;
     }
     
-    //construtor sem id
+    //construtor para novo produto
     public Produto (String nome, BigDecimal preco, String tipo, int quantidadeEmEstoque, boolean ehResgatavel, int custoEmPontos){
         this.nome = nome;
         this.preco = preco;

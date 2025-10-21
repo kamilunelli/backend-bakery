@@ -10,7 +10,7 @@ import model.Produto;
 
 public class ProdutoDAO implements ICrud<Produto> {
 
-    //atributo
+    //atributo final pois nao eh mutavel
     private final ConexaoDAO conexaoDAO;
 
     //crud de produto

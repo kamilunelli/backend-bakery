@@ -15,7 +15,7 @@ public class ItemVenda {
     public ItemVenda() {
     }
 
-    //construtor sem id
+    //construtor para novo item
     public ItemVenda(Produto produto, int quantidade, BigDecimal precoUnitario) {
         this.produto = produto;
         this.quantidade = quantidade;

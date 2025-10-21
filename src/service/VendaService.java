@@ -24,7 +24,7 @@ public class VendaService {
         this.produtoDAO = new ProdutoDAO();
     }
     
-    //vende, calcula pontos e atualiza estoque no bd
+    //vende, calcula pontos e atualiza estoque no banco de dados
     public void registrarVenda(Venda venda) throws Exception {
         
         Cliente cliente = clienteDAO.consultarPorId(venda.getCliente().getId());

@@ -18,7 +18,7 @@ public class FidelidadeService {
         this.produtoDAO = new ProdutoDAO();
     }
     
-    //metodo p realizar a troca de pontos
+    //metodo para realizar a troca de pontos e atualizar estoque
     public void trocarPontos(int clienteId, int produtoId, int quantidade) throws Exception {
         
         Cliente cliente = clienteDAO.consultarPorId(clienteId);

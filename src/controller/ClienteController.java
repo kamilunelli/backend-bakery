@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ClienteController {
     
-    //atributo
+    //atributo final pois nao eh mutavel
     private final ClienteDAO clienteDAO; 
 
     //construtor

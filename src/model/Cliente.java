@@ -18,7 +18,7 @@ public class Cliente {
         this.totalPontosAcumulados = totalPontosAcumulados;
     }
     
-    //construtor p novo cliente
+    //construtor para novo cliente
     public Cliente(String nome, String cpf, String telefone){
         this.nome = nome;
         this.cpf = cpf;

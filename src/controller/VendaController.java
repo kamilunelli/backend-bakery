@@ -14,7 +14,7 @@ import java.util.List;
 
 public class VendaController {
 
-    //atributos
+    //atributos final pois nao sao mutaveis
     private final VendaService vendaService;
     private final ClienteDAO clienteDAO;
     private final ProdutoDAO produtoDAO;

@@ -2,7 +2,7 @@ package interfaces;
 
 import java.util.List;
 
-public interface ICrud<T> { //contrato para os DAO
+public interface ICrud<T> { //contrato de CRUD para os DAO
     
     //create
     public void salvar(T t);

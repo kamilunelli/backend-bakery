@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 
 public class VendaDAO implements ICrud<Venda> {
 
-    //atributos
+    //atributos final pois nao sao mutaveis
     private final ConexaoDAO conexaoDAO;
     private final ItemVendaDAO itemVendaDAO; 
 

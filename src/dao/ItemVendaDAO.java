@@ -12,7 +12,7 @@ import model.Produto;
 
 public class ItemVendaDAO implements ICrud<ItemVenda> {
 
-    //atributo
+    //atributo final pois nao eh mutavel
     private final ConexaoDAO conexaoDAO;
 
     //crud de item venda + salvar itens e consultar por venda
