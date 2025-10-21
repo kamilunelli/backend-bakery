@@ -1,6 +1,4 @@
-
 package model;
-
 
 import java.util.List;
 import java.time.LocalDateTime;
@@ -8,15 +6,18 @@ import java.math.BigDecimal;
 
 public class Venda {
     
+    //atributos
     private int id;
     private Cliente cliente;
     private LocalDateTime dataHora;
     private List<ItemVenda> itens;
     private BigDecimal valorTotal;
     
+    //construtor vazio
     public Venda (){
     }
     
+    //construtor sem id
     public Venda(Cliente cliente, List<ItemVenda> itens){
         this.cliente = cliente;
         this.itens = itens;
@@ -24,6 +25,7 @@ public class Venda {
         this.valorTotal = BigDecimal.ZERO;
     }
     
+    //construtor
     public Venda(int id, Cliente cliente, LocalDateTime dataHora, BigDecimal valorTotal){
         this.id = id;
         this.cliente = cliente;
@@ -31,6 +33,7 @@ public class Venda {
         this.valorTotal = valorTotal; 
     }
     
+    //setters e getters
     public int getId() {
         return id;
     }

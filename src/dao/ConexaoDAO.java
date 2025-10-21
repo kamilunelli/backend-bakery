@@ -6,12 +6,14 @@ import java.sql.SQLException;
 
 public class ConexaoDAO {
     
+    //atributos para conectar ao banco de dados (utilizando jdbc)
     private static final String URL = "jdbc:postgresql://localhost:5432/TrabalhoPadaria"; 
     
     private static final String USUARIO = "postgres"; 
     
     private static final String SENHA = "1234";
     
+    //conecta ao banco
     public Connection conectar() {
         try {
             return DriverManager.getConnection(URL, USUARIO, SENHA);
@@ -20,6 +22,7 @@ public class ConexaoDAO {
         }
     }
     
+    //fecha a conexao ao banco
     public void fecharConexao(Connection conn) {
         if (conn != null) {
             try {

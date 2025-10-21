@@ -1,3 +1,5 @@
+//TESTES NAO UTILIZADOS NA PRATICA DO SISTEMA
+
 package testes;
 
 import model.Cliente;
@@ -44,13 +46,11 @@ public class TesteClienteDAO {
 
         if (clienteParaAtualizar != null) {
 
-            // 2. Modificar os dados (Regra de Negócio: Adicionar Pontos e mudar Telefone)
             clienteParaAtualizar.setTotalPontosAcumulados(50); // Adiciona 50 pontos!
             clienteParaAtualizar.setTelefone("99999-9999");
 
             System.out.println("Novo saldo de pontos do cliente " + clienteParaAtualizar.getNome() + ": " + clienteParaAtualizar.getTotalPontosAcumulados());
 
-            // 3. Chamar o método de atualização
             dao.update(clienteParaAtualizar);
 
             Cliente clienteVerificado = dao.consultarPorId(idParaAtualizar);
@@ -68,10 +68,8 @@ public class TesteClienteDAO {
     public static void testarExclusao(ClienteDAO dao, int idParaExcluir) {
         System.out.println("\n--- Testando Exclusão de Cliente (ID: " + idParaExcluir + ") ---");
 
-        // 1. Chamar o método de exclusão
         dao.excluir(idParaExcluir);
 
-        // 2. VERIFICAÇÃO FINAL: Tentar consultar novamente para garantir que foi removido
         Cliente clienteVerificado = dao.consultarPorId(idParaExcluir);
 
         if (clienteVerificado == null) {

@@ -9,8 +9,10 @@ import model.Cliente;
 
 public class ClienteDAO implements ICrud<Cliente> {
 
+    //atributo
     private final ConexaoDAO conexaoDAO; 
 
+    //crud de cliente
     public ClienteDAO() {
         this.conexaoDAO = new ConexaoDAO(); 
     }

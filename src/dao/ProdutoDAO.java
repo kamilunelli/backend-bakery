@@ -10,8 +10,10 @@ import model.Produto;
 
 public class ProdutoDAO implements ICrud<Produto> {
 
+    //atributo
     private final ConexaoDAO conexaoDAO;
 
+    //crud de produto
     public ProdutoDAO() {
         this.conexaoDAO = new ConexaoDAO(); 
     }

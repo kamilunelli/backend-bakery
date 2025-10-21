@@ -4,21 +4,25 @@ import java.math.BigDecimal;
 
 public class ItemVenda {
 
+    //atributos
     private int id;
     private Venda venda;
     private Produto produto;   
     private int quantidade;
     private BigDecimal precoUnitario;
 
+    //construtor vazio
     public ItemVenda() {
     }
 
+    //construtor sem id
     public ItemVenda(Produto produto, int quantidade, BigDecimal precoUnitario) {
         this.produto = produto;
         this.quantidade = quantidade;
         this.precoUnitario = precoUnitario;
     }
 
+    //construtor
     public ItemVenda(int id, Venda venda, Produto produto, int quantidade, BigDecimal precoUnitario) {
         this.id = id;
         this.venda = venda;
@@ -27,6 +31,7 @@ public class ItemVenda {
         this.precoUnitario = precoUnitario;
     }
 
+    //getters e setters
     public int getId() {
         return id;
     }

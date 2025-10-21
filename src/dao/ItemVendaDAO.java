@@ -12,8 +12,10 @@ import model.Produto;
 
 public class ItemVendaDAO implements ICrud<ItemVenda> {
 
+    //atributo
     private final ConexaoDAO conexaoDAO;
 
+    //crud de item venda + salvar itens e consultar por venda
     public ItemVendaDAO() {
         this.conexaoDAO = new ConexaoDAO();
     }

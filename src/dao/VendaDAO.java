@@ -18,9 +18,11 @@ import java.time.LocalDateTime;
 
 public class VendaDAO implements ICrud<Venda> {
 
+    //atributos
     private final ConexaoDAO conexaoDAO;
     private final ItemVendaDAO itemVendaDAO; 
 
+    //crud de venda (com update e excluir nao implementados na pratica)
     public VendaDAO() {
         this.conexaoDAO = new ConexaoDAO();
         this.itemVendaDAO = new ItemVendaDAO(); 

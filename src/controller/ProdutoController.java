@@ -8,8 +8,10 @@ import java.util.List;
 
 public class ProdutoController {
     
+    //atributo
     private final ProdutoDAO produtoDAO; 
 
+    //construtor
     public ProdutoController() {
         this.produtoDAO = new ProdutoDAO(); 
     }
@@ -28,14 +30,17 @@ public class ProdutoController {
         this.produtoDAO.update(produto);
     }
     
+    //buscar os produtos
     public List<Produto> buscarTodosProdutos() {
         return produtoDAO.consultarTodos();
     }
     
+    //buscar pelo id
     public Produto buscarProdutoPorId(int id) {
         return produtoDAO.consultarPorId(id);
     }
     
+    //deletar produto
     public void excluirProduto(int id) throws Exception {
         if (id <= 0) {
             throw new Exception("ID inválido para exclusão.");
