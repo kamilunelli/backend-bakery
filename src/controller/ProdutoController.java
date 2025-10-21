@@ -3,6 +3,7 @@ package controller;
 import dao.ProdutoDAO;
 import model.Produto;
 import java.math.BigDecimal;
+import java.util.List;
 
 
 public class ProdutoController {
@@ -17,5 +18,28 @@ public class ProdutoController {
     public void salvarProduto(String nome, BigDecimal preco, String tipo, int quantidadeEmEstoque, boolean ehResgatavel, int custoEmPontos) {
         Produto produto = new Produto(nome, preco, tipo, quantidadeEmEstoque, ehResgatavel, custoEmPontos);
         this.produtoDAO.salvar(produto); 
+    }
+    
+    public void salvarProduto(Produto produto) throws Exception {
+        if (produto.getNome() == null || produto.getNome().trim().isEmpty()) {
+            throw new Exception("O nome do produto é obrigatório para atualização.");
+        }
+        // Se o produto já tem ID, o DAO sabe que é UPDATE.
+        this.produtoDAO.update(produto);
+    }
+    
+    public List<Produto> buscarTodosProdutos() {
+        return produtoDAO.consultarTodos();
+    }
+    
+    public Produto buscarProdutoPorId(int id) {
+        return produtoDAO.consultarPorId(id);
+    }
+    
+    public void excluirProduto(int id) throws Exception {
+        if (id <= 0) {
+            throw new Exception("ID inválido para exclusão.");
+        }
+        produtoDAO.excluir(id);
     }
 }

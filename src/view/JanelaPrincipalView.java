@@ -9,7 +9,7 @@ package view;
  * @author SAMSUNG
  */
 public class JanelaPrincipalView extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JanelaPrincipalView.class.getName());
 
     /**
@@ -37,8 +37,8 @@ public class JanelaPrincipalView extends javax.swing.JFrame {
         miVendas = new javax.swing.JMenuItem();
         miPontos = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        miRelatorioC = new javax.swing.JMenuItem();
+        miRelatorioP = new javax.swing.JMenuItem();
 
         jMenuItem3.setText("jMenuItem3");
 
@@ -86,16 +86,21 @@ public class JanelaPrincipalView extends javax.swing.JFrame {
 
         jMenu1.setText("Relatório");
 
-        jMenuItem1.setText("Cliente");
-        jMenu1.add(jMenuItem1);
-
-        jMenuItem2.setText("Produto");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        miRelatorioC.setText("Cliente");
+        miRelatorioC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                miRelatorioCActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        jMenu1.add(miRelatorioC);
+
+        miRelatorioP.setText("Produto");
+        miRelatorioP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miRelatorioPActionPerformed(evt);
+            }
+        });
+        jMenu1.add(miRelatorioP);
 
         jMenuBar1.add(jMenu1);
 
@@ -139,9 +144,17 @@ public class JanelaPrincipalView extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_miPontosActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    private void miRelatorioPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miRelatorioPActionPerformed
+        ProdutoRelatorioView prelat = new ProdutoRelatorioView();
+        prelat.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_miRelatorioPActionPerformed
+
+    private void miRelatorioCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miRelatorioCActionPerformed
+        ClienteRelatorioView crelat = new ClienteRelatorioView();
+        crelat.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_miRelatorioCActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,12 +184,12 @@ public class JanelaPrincipalView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem miCliente;
     private javax.swing.JMenuItem miPontos;
     private javax.swing.JMenuItem miProduto;
+    private javax.swing.JMenuItem miRelatorioC;
+    private javax.swing.JMenuItem miRelatorioP;
     private javax.swing.JMenuItem miVendas;
     private javax.swing.JMenu mnCadastrar;
     private javax.swing.JMenu mnComercio;
